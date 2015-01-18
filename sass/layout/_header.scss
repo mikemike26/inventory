@@ -1,7 +1,10 @@
 .header {
-  background-color: #008cba;
-  border-bottom: 2px solid #00779b;
+  background-color: #00779b;
+  border-bottom: 2px solid #005972;
   height: 3.8em;
+  position: fixed;
+  width: 100%;
+  top: 0;
   p {
     float: right;
     color: #d3f4ff;

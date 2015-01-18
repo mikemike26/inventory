@@ -6,15 +6,23 @@
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/nav';
+@import 'layout/dashboard';
 
 //pages
+@import 'pages/main';
 
 //vendor
 @import 'vendor/stylesheets/bootstrap';
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
 
 body {
-  background-color: #008cba;
+  background-color: #00779b;
+  margin-top: 3.6em;
+  height: 100%;
 }
 
 ul, li {
@@ -32,4 +40,8 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.top-view {
+  height: 100%;
 }

@@ -1,4 +1,6 @@
 .side-nav {
+  position: fixed;
+  top: 3.7em;
   li, a, p {
     color: #d3f4ff;
   }
@@ -8,7 +10,7 @@
     width: 15em;
     &:hover {
       color: #ffffff;
-      background-color: #00779b;
+      background-color: #005972;
     }
   }
 }
