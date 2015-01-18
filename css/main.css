@@ -1,14 +1,24 @@
 @charset "UTF-8";
 .header {
   background-color: #008cba;
-  border-bottom: 2px solid #006687;
+  border-bottom: 2px solid #00779b;
   height: 3.8em; }
   .header p {
     float: right;
-    color: #e6e7e6;
+    color: #d3f4ff;
     position: relative;
-    top: 1.2em;
-    right: 2em; }
+    top: 0.9em;
+    right: 1.5em; }
+
+.side-nav li, .side-nav a, .side-nav p {
+  color: #d3f4ff; }
+.side-nav a {
+  padding: 0.9em 3em 0.9em 1.7em;
+  display: block;
+  width: 15em; }
+  .side-nav a:hover {
+    color: #ffffff;
+    background-color: #00779b; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -5379,5 +5389,20 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+body {
+  background-color: #008cba; }
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+p, a {
+  font-size: 1.2em; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

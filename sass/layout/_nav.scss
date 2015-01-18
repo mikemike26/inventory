@@ -1,0 +1,14 @@
+.side-nav {
+  li, a, p {
+    color: #d3f4ff;
+  }
+  a {
+    padding: 0.9em 3em 0.9em 1.7em;
+    display: block;
+    width: 15em;
+    &:hover {
+      color: #ffffff;
+      background-color: #00779b;
+    }
+  }
+}

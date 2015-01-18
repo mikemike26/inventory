@@ -11,3 +11,25 @@
 
 //vendor
 @import 'vendor/stylesheets/bootstrap';
+
+
+body {
+  background-color: #008cba;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p, a {
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
