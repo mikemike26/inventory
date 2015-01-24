@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .header {
   background-color: #00779b;
-  border-bottom: 2px solid #005972;
+  border-bottom: 2px solid #006b89;
   height: 3.8em;
   position: fixed;
   width: 100%;
@@ -31,12 +31,22 @@
   width: 100%;
   height: 100%; }
 
-.main-wrapper {
-  height: 100%; }
-
 .main-content {
   background-color: #ffffff;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
+
+.main-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 3.5em;
+  overflow: auto;
+  padding: 2em; }
+
+.sites .add {
+  margin: 0 0 1em 0; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -5413,8 +5423,17 @@ html {
 
 body {
   background-color: #00779b;
-  margin-top: 3.6em;
+  margin-top: 3.8em;
   height: 100%; }
+
+th, td, h2, p {
+  color: #666666; }
+
+h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #e6e7e6;
+  font-weight: normal;
+  font-size: 3em; }
 
 ul, li {
   list-style-type: none;

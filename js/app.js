@@ -1,2 +1,1 @@
-
-var ia = angular.module('inventoryApp', ['ui.router']);
+angular.module('inventoryApp', ['ui.router']);

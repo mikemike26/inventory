@@ -1,0 +1,48 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Code
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="site in sites">
+                <td>
+                    {{site.Code}}
+                </td>
+                <td>
+                    {{site.Name}}
+                </td>
+                <td>
+                    {{site.SiteType}}
+                </td>
+                <td>
+                    {{site.Address.City}}
+                </td>
+                <td>
+                    {{site.Address.State}}
+                </td>
+                <td>
+                    {{site.Address.Zip}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

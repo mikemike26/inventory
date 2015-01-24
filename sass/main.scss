@@ -9,7 +9,7 @@
 @import 'layout/dashboard';
 
 //pages
-@import 'pages/main';
+@import 'pages/sites';
 
 //vendor
 @import 'vendor/stylesheets/bootstrap';
@@ -21,10 +21,19 @@ html {
 
 body {
   background-color: #00779b;
-  margin-top: 3.6em;
+  margin-top: 3.8em;
   height: 100%;
 }
+th, td, h2, p {
+  color: #666666;
+}
 
+h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #e6e7e6;
+  font-weight: normal;
+  font-size: 3em;
+}
 ul, li {
   list-style-type: none;
   margin: 0;
