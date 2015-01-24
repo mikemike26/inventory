@@ -1,8 +1,8 @@
 angular.module('inventoryApp').factory('DummyDataHelper', function() {
-    var DummyDataHelper = function(startingData) {
-        this.data = startingData || [];
+    var DummyDataHelper = function(key) {
+        this.key = key;
+        this.data = sessionStorage[this.key] ? angular.fromJson(sessionStorage[this.key]) : [];
         this.currentId = 0;
-        sessionStorage[this] = this.data;
     };
 
     DummyDataHelper.prototype.getAll = function() {
@@ -11,6 +11,7 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
     DummyDataHelper.prototype.create = function(value) {
         value.id = this.currentId++;
         this.data.push(value);
+        sessionStorage[this.key] = angular.toJson(this.data);
         return value;
     };
     DummyDataHelper.prototype.find = function(id) {
@@ -26,6 +27,7 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
                 return this.data[i] = value;
             }
         }
+        sessionStorage[this.key] = angular.toJson(this.data);
     };
     DummyDataHelper.prototype.destroy = function(id) {
         for(var i= 0, l=this.data.length; l > i; i++) {
@@ -33,6 +35,7 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
                 return this.data.splice(i, 1);
             }
         }
+        sessionStorage[this.key] = angular.toJson(this.data);
     };
 
     return DummyDataHelper;
