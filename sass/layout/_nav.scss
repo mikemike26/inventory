@@ -1,16 +1,23 @@
 .side-nav {
-  position: fixed;
-  top: 3.7em;
-  li, a, p {
-    color: #d3f4ff;
-  }
-  a {
-    padding: 0.9em 3em 0.9em 1.7em;
-    display: block;
-    width: 15em;
-    &:hover {
-      color: #ffffff;
-      background-color: #005972;
-    }
-  }
-}
+     position: fixed;
+     top: 3.7em;
+     li, a, p {
+       color: #d3f4ff;
+     }
+     a {
+       padding: 0.9em 3em 0.9em 1.7em;
+       display: block;
+       width: 15em;
+       border-left: 6px solid transparent;
+       &:hover {
+         color: #ffffff;
+         background-color: #005972;
+         border-left: 6px solid #d3f4ff;
+       }
+       &.selected {
+         color: #ffffff;
+         background-color: #005972;
+         border-left: 6px solid #ffffff;
+       }
+     }
+   }

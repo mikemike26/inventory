@@ -21,10 +21,16 @@
   .side-nav a {
     padding: 0.9em 3em 0.9em 1.7em;
     display: block;
-    width: 15em; }
+    width: 15em;
+    border-left: 6px solid transparent; }
     .side-nav a:hover {
       color: #ffffff;
-      background-color: #005972; }
+      background-color: #005972;
+      border-left: 6px solid #d3f4ff; }
+    .side-nav a.selected {
+      color: #ffffff;
+      background-color: #005972;
+      border-left: 6px solid #ffffff; }
 
 .content-view {
   padding-left: 18.1em;
