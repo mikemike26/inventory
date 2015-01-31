@@ -1,5 +1,5 @@
 <div>
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>
@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="site in sites">
+            <tr class="list-item" ng-click="goToItem(site)" ng-repeat="site in sites">
                 <td>
                     {{site.Code}}
                 </td>

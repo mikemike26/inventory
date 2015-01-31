@@ -19,12 +19,16 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
                 url : '/view',
                 templateUrl : 'templates/pages/sites-view.html'
             })
+            .state("dashboard.sites.item", {
+                url : '/:itemId/item',
+                templateUrl : 'templates/pages/sites-item.html'
+            })
             .state("dashboard.sites.new", {
                 url : '/add',
                 templateUrl : 'templates/pages/sites-new.html'
             })
             .state("dashboard.sites.edit", {
-                url : '/edit',
+                url : '/:itemId/edit',
                 templateUrl : 'templates/pages/sites-edit.html'
             })
 

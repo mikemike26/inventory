@@ -1,6 +1,8 @@
 
 //directives
 @import 'directives/listItems';
+@import 'directives/listDetails';
+@import 'directives/ia-sites-new';
 
 //layout
 @import 'layout/header';
@@ -21,10 +23,10 @@ html {
 
 body {
   background-color: #00779b;
-  margin-top: 3.8em;
+  margin-top: 5.1em;
   height: 100%;
 }
-th, td, h2, p {
+th, td, h2, h3, h4, p {
   color: #666666;
 }
 

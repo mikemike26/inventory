@@ -1,14 +1,11 @@
-angular.module('inventoryApp').directive('iaSitesList', function(SitesData, $state) {
+angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $state, $stateParams) {
    return {
        restrict: 'C',
        replace: true,
-       templateUrl: 'templates/directives/iaSitesList.html',
+       templateUrl: 'templates/directives/iaSitesDetail.html',
        link: function(scope, element, attrs) {
-           scope.sites = SitesData.getAll();
-           scope.goToItem = function(site) {
-               console.log(site.id);
-               $state.transitionTo("dashboard.sites.item", { itemId: site.id });
-           };
+           scope.site = SitesData.find($stateParams.itemId);
+           console.log($stateParams.itemId);
        }
    }
 });
