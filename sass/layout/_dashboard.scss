@@ -8,3 +8,13 @@
   height: 100%;
   position: relative;
 }
+.main-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 3.8em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2em 2em 0 2em;
+}

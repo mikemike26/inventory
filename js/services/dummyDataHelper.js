@@ -16,7 +16,6 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
         return value;
     };
     DummyDataHelper.prototype.find = function(id) {
-        console.log(this.data);
         for(var i= 0, l=this.data.length; l > i; i++) {
             if(this.data[i].id === parseInt(id)) {
                 return this.data[i];
@@ -26,10 +25,11 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
     DummyDataHelper.prototype.update = function(value) {
         for(var i= 0, l=this.data.length; l > i; i++) {
             if(this.data[i].id === value.id) {
-                return this.data[i] = value;
+                this.data[i] = value;
+                sessionStorage[this.key] = angular.toJson(this.data);
+                return this.data[i];
             }
         }
-        sessionStorage[this.key] = angular.toJson(this.data);
     };
     DummyDataHelper.prototype.destroy = function(id) {
         for(var i= 0, l=this.data.length; l > i; i++) {
