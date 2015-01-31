@@ -33,11 +33,12 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
     };
     DummyDataHelper.prototype.destroy = function(id) {
         for(var i= 0, l=this.data.length; l > i; i++) {
-            if(this.data[i].id === id) {
-                return this.data.splice(i, 1);
+            if(this.data[i].id === parseInt(id)) {
+                var splice = this.data.splice(i, 1);
+                sessionStorage[this.key] = angular.toJson(this.data);
+                return splice;
             }
         }
-        sessionStorage[this.key] = angular.toJson(this.data);
     };
 
     return DummyDataHelper;

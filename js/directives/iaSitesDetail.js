@@ -4,8 +4,19 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
        replace: true,
        templateUrl: 'templates/directives/iaSitesDetail.html',
        link: function(scope, element, attrs) {
-           scope.site = SitesData.find($stateParams.itemId);
-           console.log($stateParams.itemId);
+           var siteId = $stateParams.itemId;
+           scope.delete = false;
+           scope.site = SitesData.find(siteId);
+           console.log(siteId);
+           scope.deleteSitePrompt = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.delete = !scope.delete;
+           };
+           scope.deleteSite = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               SitesData.destroy(siteId);
+               $state.transitionTo("dashboard.sites.view", {});
+           };
        }
    }
 });
