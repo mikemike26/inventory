@@ -7,6 +7,10 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
            var siteId = $stateParams.itemId;
            scope.delete = false;
            scope.site = SitesData.find(siteId);
+           scope.edit = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               $state.transitionTo("dashboard.sites.edit", {itemId: siteId});
+           };
            scope.deleteSitePrompt = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                scope.delete = !scope.delete;
