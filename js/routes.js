@@ -10,6 +10,7 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
                     $scope.$state = $state;
                 }
             })
+            //sites =======================================================================
 			.state("dashboard.sites", {
 				url : '/sites',
                 abstract: true,
@@ -30,6 +31,28 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
             .state("dashboard.sites.edit", {
                 url : '/:itemId/edit',
                 templateUrl : 'templates/pages/sites-edit.html'
+            })
+            //vendor ======================================================================
+            .state("dashboard.vendor", {
+                url : '/vendor',
+                abstract: true,
+                templateUrl : 'templates/pages/vendor-index.html'
+            })
+            .state("dashboard.vendor.view", {
+                url : '/view',
+                templateUrl : 'templates/pages/vendor-view.html'
+            })
+            .state("dashboard.vendor.item", {
+                url : '/:itemId/item',
+                templateUrl : 'templates/pages/vendor-item.html'
+            })
+            .state("dashboard.vendor.new", {
+                url : '/add',
+                templateUrl : 'templates/pages/vendor-new.html'
+            })
+            .state("dashboard.vendor.edit", {
+                url : '/:itemId/edit',
+                templateUrl : 'templates/pages/vendor-edit.html'
             })
 
 } ]);

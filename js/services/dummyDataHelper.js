@@ -10,7 +10,7 @@ angular.module('inventoryApp').factory('DummyDataHelper', function() {
     };
     DummyDataHelper.prototype.create = function(value) {
         var currentData = angular.fromJson(sessionStorage[this.key]);
-        value.id = currentData ? parseInt(currentData[currentData.length - 1].id) + 1 : 0;
+        value.id = currentData > 0 ? parseInt(currentData[currentData.length - 1].id) + 1 : 0;
         this.data.push(value);
         sessionStorage[this.key] = angular.toJson(this.data);
         return value;
