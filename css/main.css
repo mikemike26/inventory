@@ -27,6 +27,17 @@
   padding-bottom: 3em;
   max-width: 53em; }
 
+.ia-vendor-new, .ia-vendor-edit {
+  padding-bottom: 3em;
+  max-width: 53em; }
+  .ia-vendor-new .remove-contact, .ia-vendor-edit .remove-contact {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: red;
+    position: relative;
+    bottom: 2px;
+    left: 8px; }
+
 .header {
   background-color: #00779b;
   border-bottom: 2px solid #006b89;

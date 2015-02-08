@@ -11,6 +11,18 @@ angular.module('inventoryApp').directive('iaVendorEdit', function(VendorData, $s
                VendorData.update(scope.vendor);
                $state.transitionTo("dashboard.vendor.view", {});
            };
+           scope.addContact = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorContacts.push({
+                   FirstName: "",
+                   LastName: "",
+                   Title: ""
+               });
+           };
+           scope.removeContact = function(event, index) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorContacts.splice(index, 1);
+           };
        }
    }
 });

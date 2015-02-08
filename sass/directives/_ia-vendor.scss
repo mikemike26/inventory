@@ -1,0 +1,12 @@
+.ia-vendor-new, .ia-vendor-edit {
+  padding-bottom: 3em;
+  max-width: 53em;
+  .remove-contact {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: red;
+    position: relative;
+    bottom: 2px;
+    left: 8px;
+  }
+}

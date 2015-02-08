@@ -4,42 +4,33 @@ angular.module('inventoryApp').directive('iaVendorNew', function(VendorData, $st
        replace: true,
        templateUrl: 'templates/directives/iaVendorNew.html',
        link: function(scope, element, attrs) {
-           scope.vendor = {};
-
+           scope.vendor = {
+               VendorContacts: [
+                   {
+                       FirstName: "",
+                       LastName: "",
+                       Title: ""
+                   }
+               ]
+           };
            scope.addVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                console.log(scope.vendor);
                VendorData.create(scope.vendor);
                $state.go('dashboard.vendor.view');
-           }
+           };
+           scope.addContact = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorContacts.push({
+                   FirstName: "",
+                   LastName: "",
+                   Title: ""
+               });
+           };
+           scope.removeContact = function(event, index) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorContacts.splice(index, 1);
+           };
        }
    }
 });
-
-
-
-//var sites = [
-//    {
-//        id: '',
-//        Code:'',
-//        Name: '',
-//        PhoneNumber: '',
-//        SiteType: '',
-//        Address: {
-//            AddressLine1: '',
-//            AddressLine2: '',
-//            City: '',
-//            State: '',
-//            Zip: ''
-//        },
-//        SiteContact: {
-//            FirstName: '',
-//            LastName: '',
-//            EmailAddress: '',
-//            PrimaryPhone: '',
-//            MobilePhone: '',
-//            SiteNotes: ''
-//        },
-//        SiteNotes: ''
-//    }
-//];

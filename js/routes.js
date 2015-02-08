@@ -1,6 +1,6 @@
 angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
 		function($urlRouterProvider, $stateProvider) {
-			$urlRouterProvider.otherwise('/dashboard/sites');
+			$urlRouterProvider.otherwise('/dashboard/view');
 			$stateProvider
             .state("dashboard", {
                 url : '/dashboard',
@@ -53,6 +53,28 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
             .state("dashboard.vendor.edit", {
                 url : '/:itemId/edit',
                 templateUrl : 'templates/pages/vendor-edit.html'
+            })
+            //circuits ======================================================================
+            .state("dashboard.circuits", {
+                url : '/circuits',
+                abstract: true,
+                templateUrl : 'templates/pages/circuits-index.html'
+            })
+            .state("dashboard.circuits.view", {
+                url : '/view',
+                templateUrl : 'templates/pages/circuits-view.html'
+            })
+            .state("dashboard.circuits.item", {
+                url : '/:itemId/item',
+                templateUrl : 'templates/pages/circuits-item.html'
+            })
+            .state("dashboard.circuits.new", {
+                url : '/add',
+                templateUrl : 'templates/pages/circuits-new.html'
+            })
+            .state("dashboard.circuits.edit", {
+                url : '/:itemId/edit',
+                templateUrl : 'templates/pages/circuits-edit.html'
             })
 
 } ]);
