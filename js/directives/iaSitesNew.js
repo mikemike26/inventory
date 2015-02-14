@@ -15,31 +15,3 @@ angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $stat
        }
    }
 });
-
-
-
-//var sites = [
-//    {
-//        id: '',
-//        Code:'',
-//        Name: '',
-//        PhoneNumber: '',
-//        SiteType: '',
-//        Address: {
-//            AddressLine1: '',
-//            AddressLine2: '',
-//            City: '',
-//            State: '',
-//            Zip: ''
-//        },
-//        SiteContact: {
-//            FirstName: '',
-//            LastName: '',
-//            EmailAddress: '',
-//            PrimaryPhone: '',
-//            MobilePhone: '',
-//            SiteNotes: ''
-//        },
-//        SiteNotes: ''
-//    }
-//];

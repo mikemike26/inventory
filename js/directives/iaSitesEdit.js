@@ -5,10 +5,16 @@ angular.module('inventoryApp').directive('iaSitesEdit', function(SitesData, $sta
        templateUrl: 'templates/directives/iaSitesEdit.html',
        link: function(scope, element, attrs) {
            var siteId = $stateParams.itemId;
-           scope.site = SitesData.find(siteId);
+           //scope.site = SitesData.find(siteId);
+           SitesData.getSiteById(siteId).then(function(data) {
+               scope.site = data;
+               console.log(data);
+           });
            scope.updateSite = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               SitesData.update(scope.site);
+               SitesData.update(scope.site).then(function() {
+
+               });
                $state.transitionTo("dashboard.sites.view", {});
            };
        }
