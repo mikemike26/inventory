@@ -10,7 +10,7 @@ angular.module('inventoryApp').directive('iaVendorDetail', function(VendorData, 
            console.log(scope.vendor.Address.AddressLine2);
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               $state.transitionTo("dashboard.vendor.edit", {itemId: vendorId});
+               $state.transitionTo("dashboard.inventory.vendor.edit", {itemId: vendorId});
            };
            scope.deleteVendorPrompt = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
@@ -19,7 +19,7 @@ angular.module('inventoryApp').directive('iaVendorDetail', function(VendorData, 
            scope.deleteVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                VendorData.destroy(vendorId);
-               $state.transitionTo("dashboard.vendor.view", {});
+               $state.transitionTo("dashboard.inventory.vendor.view", {});
            };
        }
    }

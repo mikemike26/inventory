@@ -10,7 +10,7 @@ angular.module('inventoryApp').directive('iaSitesList', function(SitesData, $sta
            //});
            console.log(scope.sites);
            scope.goToItem = function(site) {
-               $state.transitionTo("dashboard.sites.item", { itemId: site.Id });
+               $state.transitionTo("dashboard.inventory.sites.item", { itemId: site.Id });
            };
        }
    }

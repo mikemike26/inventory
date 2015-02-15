@@ -1,4 +1,23 @@
-<div class="header">
-    <img class="logo" src="img/Circicom.gif" alt="Circicom"/>
-    <p class="user-name"><span class="glyphicon glyphicon-user"></span>Michael Rensel</p>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top header">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="logo navbar-brand" src="img/Circicom.gif" alt="Circicom"/>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav nav-items">
+                <li><a href="#">Dashboard</a></li>
+                <li ng-class="{active: $state.includes('dashboard.inventory')}"><a href="#" ui-sref="dashboard.inventory.sites.view">Inventory</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+

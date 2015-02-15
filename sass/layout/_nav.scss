@@ -2,7 +2,7 @@
      position: fixed;
      top: 3.7em;
      li, a, p {
-       color: #d3f4ff;
+       color: #9d9d9d;
      }
      a {
        padding: 0.9em 3em 0.9em 1.7em;
@@ -11,12 +11,12 @@
        border-left: 6px solid transparent;
        &:hover {
          color: #ffffff;
-         background-color: #005972;
-         border-left: 6px solid #d3f4ff;
+         background-color: #000000;
+         border-left: 6px solid #000000;
        }
        &.selected {
          color: #ffffff;
-         background-color: #005972;
+         background-color: #000000;
          border-left: 6px solid #ffffff;
        }
      }

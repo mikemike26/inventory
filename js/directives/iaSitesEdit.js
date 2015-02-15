@@ -15,7 +15,7 @@ angular.module('inventoryApp').directive('iaSitesEdit', function(SitesData, $sta
                SitesData.update(scope.site).then(function() {
 
                });
-               $state.transitionTo("dashboard.sites.view", {});
+               $state.transitionTo("dashboard.inventory.sites.view", {});
            };
        }
    }

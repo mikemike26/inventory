@@ -9,7 +9,7 @@ angular.module('inventoryApp').directive('iaVendorEdit', function(VendorData, $s
            scope.updateVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                VendorData.update(scope.vendor);
-               $state.transitionTo("dashboard.vendor.view", {});
+               $state.transitionTo("dashboard.inventory.vendor.view", {});
            };
            scope.addContact = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;

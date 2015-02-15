@@ -10,7 +10,7 @@ angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $stat
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                console.log(scope.site);
                SitesData.create(scope.site);
-               $state.go('dashboard.sites.view');
+               $state.go('dashboard.inventory.sites.view');
            }
        }
    }
