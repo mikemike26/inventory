@@ -6,7 +6,7 @@ angular.module('inventoryApp').directive('iaVendorList', function(VendorData, $s
        link: function(scope, element, attrs) {
            scope.vendors = VendorData.getAll();
            scope.goToItem = function(vendor) {
-               $state.transitionTo("dashboard.vendor.item", { itemId: vendor.id });
+               $state.transitionTo("dashboard.vendor.item", { itemId: vendor.Id });
            };
        }
    }

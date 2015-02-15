@@ -1,17 +1,13 @@
 <div>
-    <h2>{{site.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
+    <div class="row">
+        <h2>{{site.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
+    </div>
     <div class="row">
         <h3>Site Details</h3>
-        <div class="col-md-6">
-            <h4>Code</h4>
+        <div class="col-md-4">
             <p>{{site.Code}}</p>
         </div>
-        <div class="col-md-6">
-            <h4>Name</h4>
-            <p>{{site.Name}}</p>
-        </div>
-        <div class="col-md-6">
-            <h4>Type</h4>
+        <div class="col-md-4">
             <p>{{site.SiteType}}</p>
         </div>
         <div class="col-md-6">
@@ -22,45 +18,28 @@
     <div class="row">
         <h3>Site Address</h3>
         <div class="col-md-12">
-            <h4>Address 1</h4>
             <p>{{site.Address.AddressLine1}}</p>
         </div>
         <div class="col-md-12">
-            <h4>Address 2</h4>
             <p>{{site.Address.AddressLine2}}</p>
         </div>
         <div class="col-md-4">
-            <h4>City</h4>
-            <p>{{site.Address.City}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>State</h4>
-            <p>{{site.Address.State}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>Zip</h4>
-            <p>{{site.Address.Zip}}</p>
+            <p>{{site.Address.City}} {{site.Address.State}}, {{site.Address.Zip}}</p>
         </div>
     </div>
     <div class="row">
         <h3>Site Contact</h3>
         <div class="col-md-6">
-            <h4>First Name</h4>
-            <p>{{site.SiteContact.FirstName}}</p>
-        </div>
-        <div class="col-md-6">
-            <h4>Last Name</h4>
-            <p>{{site.SiteContact.LastName}}</p>
+            <p>{{site.SiteContact.FirstName}} {{site.SiteContact.LastName}}</p>
         </div>
         <div class="col-md-12">
-            <h4>Email</h4>
             <p>{{site.SiteContact.EmailAddress}}</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h4>Primary Phone</h4>
             <p>{{site.SiteContact.PrimaryPhone}}</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h4>Mobile Phone</h4>
             <p>{{site.SiteContact.MobilePhone}}</p>
         </div>

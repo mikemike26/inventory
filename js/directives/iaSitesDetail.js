@@ -6,11 +6,11 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
        link: function(scope, element, attrs) {
            var siteId = $stateParams.itemId;
            scope.delete = false;
-           //scope.site = SitesData.find(siteId);
-           SitesData.getSiteById(siteId).then(function(data) {
-               scope.site = data;
-               console.log(data);
-           });
+           scope.site = SitesData.find(siteId);
+           //SitesData.getSiteById(siteId).then(function(data) {
+           //    scope.site = data;
+           //    console.log(data);
+           //});
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                $state.transitionTo("dashboard.sites.edit", {itemId: siteId});
@@ -27,31 +27,3 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
        }
    }
 });
-
-
-
-//var sites = [
-//    {
-//        id: '',
-//        Code:'',
-//        Name: '',
-//        PhoneNumber: '',
-//        SiteType: '',
-//        Address: {
-//            AddressLine1: '',
-//            AddressLine2: '',
-//            City: '',
-//            State: '',
-//            Zip: ''
-//        },
-//        SiteContact: {
-//            FirstName: '',
-//            LastName: '',
-//            EmailAddress: '',
-//            PrimaryPhone: '',
-//            MobilePhone: '',
-//            SiteNotes: ''
-//        },
-//        SiteNotes: ''
-//    }
-//];

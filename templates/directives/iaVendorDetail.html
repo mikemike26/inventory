@@ -1,50 +1,32 @@
 <div>
-    <h2>{{vendor.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
     <div class="row">
-        <h3>Vendor Details</h3>
-        <div class="col-md-6">
-            <h4>Name</h4>
-            <p>{{vendor.Name}}</p>
-        </div>
+        <h2>{{vendor.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
     </div>
     <div class="row">
         <h3>Vendor Address</h3>
         <div class="col-md-12">
-            <h4>Address 1</h4>
             <p>{{vendor.Address.AddressLine1}}</p>
-        </div>
-        <div class="col-md-12">
-            <h4>Address 2</h4>
-            <p>{{vendor.Address.AddressLine2}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>City</h4>
-            <p>{{vendor.Address.City}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>State</h4>
-            <p>{{vendor.Address.State}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>Zip</h4>
-            <p>{{vendor.Address.Zip}}</p>
+            <p ng-show="vendor.Address.AddressLine2">{{vendor.Address.AddressLine2}}</p>
+            <p>{{vendor.Address.City}} {{vendor.Address.State}}, {{vendor.Address.Zip}}</p>
         </div>
     </div>
     <div class="row">
         <h3>Vendor Contacts</h3>
-        <div ng-repeat="contact in vendor.VendorContacts">
-            <div class="form-group col-md-4">
-                <h4>Title</h4>
-                <p>{{contact.Title}}</p>
-            </div>
-            <div class="form-group col-md-4">
-                <h4>First Name</h4>
-                <p>{{contact.FirstName}}</p>
-            </div>
-            <div class="form-group col-md-4">
-                <h4>Last Name</h4>
-                <p>{{contact.LastName}}</p>
-            </div>
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="list-item" ng-click="goToItem(vendor)" ng-repeat="contact in vendor.VendorContacts">
+                    <td>{{contact.Title}}</td>
+                    <td>{{contact.FirstName}} {{contact.LastName}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="row">

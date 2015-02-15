@@ -7,6 +7,7 @@ angular.module('inventoryApp').directive('iaVendorDetail', function(VendorData, 
            var vendorId = $stateParams.itemId;
            scope.delete = false;
            scope.vendor = VendorData.find(vendorId);
+           console.log(scope.vendor.Address.AddressLine2);
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                $state.transitionTo("dashboard.vendor.edit", {itemId: vendorId});
