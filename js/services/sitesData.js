@@ -33,7 +33,7 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
         var deferred = $q.defer();
         $http({
             method: 'PUT',
-            url: 'https://circi-azizdev.azurewebsites.net/api/sites/',
+            url: 'https://circi-azizdev.azurewebsites.net/api/sites',
             data: angular.toJson(data)
         }).success(function (data, status, headers, config) {
             deferred.resolve(data);
@@ -47,8 +47,23 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
         var deferred = $q.defer();
         $http({
             method: 'POST',
-            url: 'https://circi-azizdev.azurewebsites.net/api/sites/',
-            data: angular.toJson(data)
+            url: 'https://circi-azizdev.azurewebsites.net/api/sites',
+            data: angular.toJson(data),
+            dataType: 'json',
+            contentType: 'application/json'
+        }).success(function (data, status, headers, config) {
+            deferred.resolve(data);
+        }).error(function (data, status, headers, config) {
+            console.log("Error! "+status);
+            deferred.reject(status);
+        });
+        return deferred.promise;
+    };
+    sitesData.destroy = function(id) {
+        var deferred = $q.defer();
+        $http({
+            method: 'DELETE',
+            url: 'https://circi-azizdev.azurewebsites.net/api/sites/'+id,
         }).success(function (data, status, headers, config) {
             deferred.resolve(data);
         }).error(function (data, status, headers, config) {

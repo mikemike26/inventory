@@ -9,8 +9,9 @@ angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $stat
            scope.addSite = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                console.log(scope.site);
-               SitesData.create(scope.site);
-               $state.go('dashboard.inventory.sites.view');
+               SitesData.create(scope.site).then(function() {
+                   $state.go('dashboard.inventory.sites.view');
+               });
            }
        }
    }

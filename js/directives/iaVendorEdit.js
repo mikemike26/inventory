@@ -5,7 +5,9 @@ angular.module('inventoryApp').directive('iaVendorEdit', function(VendorData, $s
        templateUrl: 'templates/directives/iaVendorEdit.html',
        link: function(scope, element, attrs) {
            var vendorId = $stateParams.itemId;
-           scope.vendor = VendorData.find(vendorId);
+           VendorData.find(vendorId).then(function(data) {
+               scope.vendor = angular.fromJson(data);
+           });
            scope.updateVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                VendorData.update(scope.vendor);
