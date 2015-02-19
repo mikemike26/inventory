@@ -48,9 +48,7 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
         $http({
             method: 'POST',
             url: 'https://circi-azizdev.azurewebsites.net/api/sites',
-            data: angular.toJson(data),
-            dataType: 'json',
-            contentType: 'application/json'
+            data: angular.toJson(data)
         }).success(function (data, status, headers, config) {
             deferred.resolve(data);
         }).error(function (data, status, headers, config) {
