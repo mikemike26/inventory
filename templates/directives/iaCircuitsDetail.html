@@ -1,0 +1,63 @@
+<div>
+    <div class="row">
+        <h2>{{site.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
+    </div>
+    <div class="row">
+        <h3>Site Details</h3>
+        <div class="col-md-4">
+            <p>{{site.Code}}</p>
+        </div>
+        <div class="col-md-4">
+            <p>{{site.SiteType}}</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Phone</h4>
+            <p>{{site.PhoneNumber}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Address</h3>
+        <div class="col-md-12">
+            <p>{{site.Address.AddressLine1}}</p>
+        </div>
+        <div class="col-md-12">
+            <p>{{site.Address.AddressLine2}}</p>
+        </div>
+        <div class="col-md-4">
+            <p>{{site.Address.City}} {{site.Address.State}}, {{site.Address.Zip}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Contact</h3>
+        <div class="col-md-6">
+            <p>{{site.SiteContact.FirstName}} {{site.SiteContact.LastName}}</p>
+        </div>
+        <div class="col-md-12">
+            <p>{{site.SiteContact.EmailAddress}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Primary Phone</h4>
+            <p>{{site.SiteContact.PrimaryPhone}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Mobile Phone</h4>
+            <p>{{site.SiteContact.MobilePhone}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Notes</h3>
+        <div class="col-md-12 notes">
+            <p class="notes">{{site.SiteNotes}}</p>
+        </div>
+        <div ng-hide="delete">
+            <a href="#" class="btn btn-success" ui-sref="dashboard.inventory.sites.view">Done</a>
+            <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">Delete Site</a>
+        </div>
+        <div ng-show="delete">
+            <h4>Are you sure you want to delete this site?</h4>
+            <a href="#" class="btn btn-danger" ng-click="deleteSite($event)">Yes, Delete this Site</a>
+            <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">No, Don't Delete</a>
+        </div>
+
+    </div>
+</div>

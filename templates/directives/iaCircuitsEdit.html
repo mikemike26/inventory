@@ -1,0 +1,74 @@
+<div>
+    <div class="row">
+        <h3>Site Details</h3>
+        <div class="col-md-6">
+            <label for="siteCode"></label>
+            <input type="text" class="form-control" id="siteCode" ng-model="site.Code" placeholder="Enter site code">
+        </div>
+        <div class="col-md-6">
+            <label for="siteName"></label>
+            <input type="text" class="form-control" id="siteName" ng-model="site.Name" placeholder="Enter site name">
+        </div>
+        <div class="col-md-6">
+            <label for="siteType"></label>
+            <input type="text" class="form-control" id="siteType" ng-model="site.SiteType" placeholder="Enter site type">
+        </div>
+        <div class="col-md-6">
+            <label for="sitePhone"></label>
+            <input type="text" class="form-control" id="sitePhone" ng-model="site.PhoneNumber" placeholder="Enter site phone number">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Address</h3>
+        <div class="col-md-12">
+            <label for="siteAddressAddress1"></label>
+            <input type="text" class="form-control" id="siteAddressAddress1" ng-model="site.Address.AddressLine1" placeholder="Enter a site address">
+        </div>
+        <div class="col-md-12">
+            <label for="siteAddressAddress2"></label>
+            <input type="text" class="form-control" id="siteAddressAddress2" ng-model="site.Address.AddressLine2" placeholder="">
+        </div>
+        <div class="col-md-4">
+            <label for="siteAddressCity"></label>
+            <input type="text" class="form-control" id="siteAddressCity" ng-model="site.Address.City" placeholder="Enter city">
+        </div>
+        <div class="col-md-4">
+            <label for="siteAddressState"></label>
+            <input type="text" class="form-control" id="siteAddressState" ng-model="site.Address.State" placeholder="Enter a state">
+        </div>
+        <div class="col-md-4">
+            <label for="siteAddressZip"></label>
+            <input type="text" class="form-control" id="siteAddressZip" ng-model="site.Address.Zip" placeholder="Enter a zip">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Contact</h3>
+        <div class="col-md-6">
+            <label for="siteContactFirst"></label>
+            <input type="text" class="form-control" id="siteContactFirst" ng-model="site.SiteContact.FirstName" placeholder="Enter a first name">
+        </div>
+        <div class="col-md-6">
+            <label for="siteContactLast"></label>
+            <input type="text" class="form-control" id="siteContactLast" ng-model="site.SiteContact.LastName" placeholder="Enter a last name">
+        </div>
+        <div class="col-md-12">
+            <label for="siteContactEmail"></label>
+            <input type="text" class="form-control" id="siteContactEmail" ng-model="site.SiteContact.EmailAddress" placeholder="Enter an email">
+        </div>
+        <div class="col-md-6">
+            <label for="siteContactPrimary"></label>
+            <input type="text" class="form-control" id="siteContactPrimary" ng-model="site.SiteContact.PrimaryPhone" placeholder="Enter a primary phone number">
+        </div>
+        <div class="col-md-6">
+            <label for="siteContactMobile"></label>
+            <input type="text" class="form-control" id="siteContactMobile" ng-model="site.SiteContact.MobilePhone" placeholder="Enter a mobile phone number">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Site Notes</h3>
+        <div class="form-group">
+            <textarea class="form-control" rows="4" ng-model="site.SiteNotes" ></textarea>
+        </div>
+    </div>
+    <a href="#" class="btn btn-success" ng-click="updateSite($event)">Update</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.sites.view">Cancel</a>
+</div>
