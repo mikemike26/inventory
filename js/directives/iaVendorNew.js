@@ -16,8 +16,9 @@ angular.module('inventoryApp').directive('iaVendorNew', function(VendorData, $st
            scope.addVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                console.log(scope.vendor);
-               VendorData.create(scope.vendor);
-               $state.go('dashboard.inventory.vendor.view');
+               VendorData.create(scope.vendor).then(function() {
+                   $state.go('dashboard.inventory.vendor.view');
+               });
            };
            scope.addContact = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;

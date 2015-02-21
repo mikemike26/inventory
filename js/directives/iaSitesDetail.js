@@ -13,7 +13,7 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
            });
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               $state.transitionTo("dashboard.sites.edit", {itemId: siteId});
+               $state.transitionTo("dashboard.inventory.sites.edit", {itemId: siteId});
            };
            scope.deleteSitePrompt = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
@@ -21,8 +21,9 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
            };
            scope.deleteSite = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               SitesData.destroy(siteId);
-               $state.transitionTo("dashboard.sites.view", {});
+               SitesData.destroy(siteId).then(function() {
+                   $state.transitionTo("dashboard.inventory.sites.view", {});
+               });
            };
        }
    }

@@ -6,10 +6,9 @@ angular.module('inventoryApp').directive('iaVendorDetail', function(VendorData, 
        link: function(scope, element, attrs) {
            var vendorId = $stateParams.itemId;
            scope.delete = false;
-           VendorData.find(vendorId).then(function(data) {
+           VendorData.getVendorById(vendorId).then(function(data) {
                scope.vendor = angular.fromJson(data);
            });
-           console.log(scope.vendor.Address.AddressLine2);
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                $state.transitionTo("dashboard.inventory.vendor.edit", {itemId: vendorId});
@@ -20,8 +19,9 @@ angular.module('inventoryApp').directive('iaVendorDetail', function(VendorData, 
            };
            scope.deleteVendor = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               VendorData.destroy(vendorId);
-               $state.transitionTo("dashboard.inventory.vendor.view", {});
+               VendorData.destroy(vendorId).then(function() {
+                   $state.transitionTo("dashboard.inventory.vendor.view", {});
+               });
            };
        }
    }

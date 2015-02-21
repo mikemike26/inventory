@@ -17,7 +17,7 @@ angular.module('inventoryApp').factory('VendorData', function(DummyDataHelper, $
         });
         return deferred.promise;
     };
-    vendorData.getSiteById = function(id) {
+    vendorData.getVendorById = function(id) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
@@ -35,7 +35,9 @@ angular.module('inventoryApp').factory('VendorData', function(DummyDataHelper, $
         $http({
             method: 'PUT',
             url: 'https://circi-azizdev.azurewebsites.net/api/vendors',
-            data: angular.toJson(data)
+            data: angular.toJson(data),
+            dataType: 'json',
+            contentType: 'application/json'
         }).success(function (data, status, headers, config) {
             deferred.resolve(data);
         }).error(function (data, status, headers, config) {
@@ -52,6 +54,19 @@ angular.module('inventoryApp').factory('VendorData', function(DummyDataHelper, $
             data: angular.toJson(data),
             dataType: 'json',
             contentType: 'application/json'
+        }).success(function (data, status, headers, config) {
+            deferred.resolve(data);
+        }).error(function (data, status, headers, config) {
+            console.log("Error! "+status);
+            deferred.reject(status);
+        });
+        return deferred.promise;
+    };
+    vendorData.destroy = function(id) {
+        var deferred = $q.defer();
+        $http({
+            method: 'DELETE',
+            url: 'https://circi-azizdev.azurewebsites.net/api/vendors/'+id
         }).success(function (data, status, headers, config) {
             deferred.resolve(data);
         }).error(function (data, status, headers, config) {

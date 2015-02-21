@@ -1,28 +1,28 @@
-angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $state, $stateParams) {
+angular.module('inventoryApp').directive('iaCircuitsDetail', function(CircuitsData, $state, $stateParams) {
    return {
        restrict: 'C',
        replace: true,
-       templateUrl: 'templates/directives/iaSitesDetail.html',
+       templateUrl: 'templates/directives/iaCircuitsDetail.html',
        link: function(scope, element, attrs) {
-           var siteId = $stateParams.itemId;
+           var circuitsId = $stateParams.itemId;
            scope.delete = false;
-           //scope.site = SitesData.find(siteId);
-           SitesData.getSiteById(siteId).then(function(data) {
-               scope.site = data;
-               console.log(data);
-           });
+           scope.circuit = CircuitsData.find(circuitsId);
+           //SitesData.getSiteById(circuitsId).then(function(data) {
+           //    scope.site = data;
+           //    console.log(data);
+           //});
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               $state.transitionTo("dashboard.sites.edit", {itemId: siteId});
+               $state.transitionTo("dashboard.circuits.edit", {itemId: circuitsId});
            };
-           scope.deleteSitePrompt = function(event) {
+           scope.deleteCircuitPrompt = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                scope.delete = !scope.delete;
            };
-           scope.deleteSite = function(event) {
+           scope.deleteCircuit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
-               SitesData.destroy(siteId);
-               $state.transitionTo("dashboard.sites.view", {});
+               CircuitsData.destroy(circuitsId);
+               $state.transitionTo("dashboard.circuits.view", {});
            };
        }
    }
