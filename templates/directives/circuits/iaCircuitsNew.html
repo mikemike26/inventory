@@ -1,0 +1,74 @@
+<div>
+    <div class="row">
+        <h3>Circuit Details</h3>
+        <div class="col-md-6">
+            <label for="circuitCode"></label>
+            <input type="text" class="form-control" id="circuitCode" ng-model="circuit.Code" placeholder="Enter circuit code">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitName"></label>
+            <input type="text" class="form-control" id="circuitName" ng-model="circuit.Name" placeholder="Enter circuit name">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitType"></label>
+            <input type="text" class="form-control" id="circuitType" ng-model="circuit.CircuitType" placeholder="Enter circuit type">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitPhone"></label>
+            <input type="text" class="form-control" id="circuitPhone" ng-model="circuit.PhoneNumber" placeholder="Enter circuit phone number">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Circuit Address</h3>
+        <div class="col-md-12">
+            <label for="circuitAddressAddress1"></label>
+            <input type="text" class="form-control" id="circuitAddressAddress1" ng-model="circuit.Address.AddressLine1" placeholder="Enter a circuit address">
+        </div>
+        <div class="col-md-12">
+            <label for="circuitAddressAddress2"></label>
+            <input type="text" class="form-control" id="circuitAddressAddress2" ng-model="circuit.Address.AddressLine2" placeholder="">
+        </div>
+        <div class="col-md-4">
+            <label for="circuitAddressCity"></label>
+            <input type="text" class="form-control" id="circuitAddressCity" ng-model="circuit.Address.City" placeholder="Enter city">
+        </div>
+        <div class="col-md-4">
+            <label for="circuitAddressState"></label>
+            <input type="text" class="form-control" id="circuitAddressState" ng-model="circuit.Address.State" placeholder="Enter a state">
+        </div>
+        <div class="col-md-4">
+            <label for="circuitAddressZip"></label>
+            <input type="text" class="form-control" id="circuitAddressZip" ng-model="circuit.Address.Zip" placeholder="Enter a zip">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Circuit Contact</h3>
+        <div class="col-md-6">
+            <label for="circuitContactFirst"></label>
+            <input type="text" class="form-control" id="circuitContactFirst" ng-model="circuit.CircuitContact.FirstName" placeholder="Enter a first name">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitContactLast"></label>
+            <input type="text" class="form-control" id="circuitContactLast" ng-model="circuit.CircuitContact.LastName" placeholder="Enter a last name">
+        </div>
+        <div class="col-md-12">
+            <label for="circuitContactEmail"></label>
+            <input type="text" class="form-control" id="circuitContactEmail" ng-model="circuit.CircuitContact.EmailAddress" placeholder="Enter an email">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitContactPrimary"></label>
+            <input type="text" class="form-control" id="circuitContactPrimary" ng-model="circuit.CircuitContact.PrimaryPhone" placeholder="Enter a primary phone number">
+        </div>
+        <div class="col-md-6">
+            <label for="circuitContactMobile"></label>
+            <input type="text" class="form-control" id="circuitContactMobile" ng-model="circuit.CircuitContact.MobilePhone" placeholder="Enter a mobile phone number">
+        </div>
+    </div>
+    <div class="row">
+        <h3>Circuit Notes</h3>
+        <div class="form-group">
+            <textarea class="form-control" rows="4" ng-model="circuit.CircuitNotes" ></textarea>
+        </div>
+    </div>
+    <a href="#" class="btn btn-success" ng-click="addCircuit($event)">Add</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.circuits.index">Cancel</a>
+</div>
