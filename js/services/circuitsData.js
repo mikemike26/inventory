@@ -14,7 +14,7 @@ angular.module('inventoryApp').factory('CircuitsData', function(DummyDataHelper,
         });
         return deferred.promise;
     };
-    circuitsData.getSiteById = function(id) {
+    circuitsData.find = function(id) {
         var deferred = $q.defer();
         $http({
             method: 'GET',

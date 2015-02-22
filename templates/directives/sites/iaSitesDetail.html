@@ -4,13 +4,13 @@
     </div>
     <div class="row">
         <h3>Site Details</h3>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <p>{{site.Code}}</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <p>{{site.SiteType}}</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h4>Phone</h4>
             <p>{{site.PhoneNumber}}</p>
         </div>
@@ -29,19 +29,25 @@
     </div>
     <div class="row">
         <h3>Site Contact</h3>
-        <div class="col-md-6">
-            <p>{{site.SiteContact.FirstName}} {{site.SiteContact.LastName}}</p>
-        </div>
-        <div class="col-md-12">
-            <p>{{site.SiteContact.EmailAddress}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>Primary Phone</h4>
-            <p>{{site.SiteContact.PrimaryPhone}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4>Mobile Phone</h4>
-            <p>{{site.SiteContact.MobilePhone}}</p>
+        <div class="row-striped" data-ng-repeat="contact in site.SiteContacts">
+            <div class="col-md-12">
+                <p>{{contact.FirstName}} {{contact.LastName}}</p>
+            </div>
+            <div class="col-md-12">
+                <p>{{contact.Title}}</p>
+            </div>
+            <div class="col-md-12">
+                <p>{{contact.EmailAddress}}</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Primary Phone</h4>
+                <p>{{contact.PrimaryPhone}}</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Mobile Phone</h4>
+                <p>{{contact.MobilePhone}}</p>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
     <div class="row">

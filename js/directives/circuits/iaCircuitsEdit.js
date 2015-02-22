@@ -6,7 +6,7 @@ angular.module('inventoryApp').directive('iaCircuitsEdit', function(CircuitsData
        link: function(scope, element, attrs) {
            var siteId = $stateParams.itemId;
            //scope.site = CircuitsData.find(siteId);
-           CircuitsData.getSiteById(siteId).then(function(data) {
+           CircuitsData.find(siteId).then(function(data) {
                scope.site = data;
                console.log(data);
            });

@@ -24,11 +24,11 @@
             <label for="siteAddressAddress1"></label>
             <input type="text" class="form-control" id="siteAddressAddress1" ng-model="site.Address.AddressLine1" placeholder="Enter a site address">
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
             <label for="siteAddressAddress2"></label>
-            <input type="text" class="form-control" id="siteAddressAddress2" ng-model="site.Address.AddressLine2" placeholder="">
+            <input type="text" class="form-control" id="siteAddressAddress2" ng-model="site.Address.AddressLine2" placeholder="suite#/additional">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <label for="siteAddressCity"></label>
             <input type="text" class="form-control" id="siteAddressCity" ng-model="site.Address.City" placeholder="Enter city">
         </div>
@@ -40,29 +40,41 @@
             <label for="siteAddressZip"></label>
             <input type="text" class="form-control" id="siteAddressZip" ng-model="site.Address.Zip" placeholder="Enter a zip">
         </div>
+        <div class="col-md-4">
+            <label for="siteAddressZip"></label>
+            <input type="text" class="form-control" id="siteAddressCountry" ng-model="site.Address.Country" placeholder="Enter a country">
+        </div>
     </div>
     <div class="row">
         <h3>Site Contact</h3>
-        <div class="col-md-6">
-            <label for="siteContactFirst"></label>
-            <input type="text" class="form-control" id="siteContactFirst" ng-model="site.SiteContact.FirstName" placeholder="Enter a first name">
+        <div class="form-contacts row-striped" ng-repeat="contact in site.SiteContacts">
+            <div class="col-md-6">
+                <label for="siteContactFirst"><a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove</a></label>
+                <input type="text" class="form-control" id="siteContactFirst" ng-model="contact.FirstName" placeholder="Enter a first name">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactLast"></label>
+                <input type="text" class="form-control" id="siteContactLast" ng-model="contact.LastName" placeholder="Enter a last name">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactTitle"></label>
+                <input type="text" class="form-control" id="siteContactTitle" ng-model="contact.Title" placeholder="Title">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactEmail"></label>
+                <input type="text" class="form-control" id="siteContactEmail" ng-model="contact.EmailAddress" placeholder="Enter an email">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactPrimary"></label>
+                <input type="text" class="form-control" id="siteContactPrimary" ng-model="contact.PrimaryPhone" placeholder="Enter a primary phone number">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactMobile"></label>
+                <input type="text" class="form-control" id="siteContactMobile" ng-model="contact.MobilePhone" placeholder="Enter a mobile phone number">
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="col-md-6">
-            <label for="siteContactLast"></label>
-            <input type="text" class="form-control" id="siteContactLast" ng-model="site.SiteContact.LastName" placeholder="Enter a last name">
-        </div>
-        <div class="col-md-12">
-            <label for="siteContactEmail"></label>
-            <input type="text" class="form-control" id="siteContactEmail" ng-model="site.SiteContact.EmailAddress" placeholder="Enter an email">
-        </div>
-        <div class="col-md-6">
-            <label for="siteContactPrimary"></label>
-            <input type="text" class="form-control" id="siteContactPrimary" ng-model="site.SiteContact.PrimaryPhone" placeholder="Enter a primary phone number">
-        </div>
-        <div class="col-md-6">
-            <label for="siteContactMobile"></label>
-            <input type="text" class="form-control" id="siteContactMobile" ng-model="site.SiteContact.MobilePhone" placeholder="Enter a mobile phone number">
-        </div>
+        <a href="#" class="btn btn-success add" ng-click="addContact($event)">Add a Contact</a>
     </div>
     <div class="row">
         <h3>Site Notes</h3>

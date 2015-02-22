@@ -22,23 +22,19 @@
     min-height: 5em;
     margin-bottom: 1em; }
 
-.ia-sites-new, .ia-sites-edit {
+.ia-sites-new, .ia-sites-edit, .ia-vendor-new, .ia-vendor-edit {
   padding-bottom: 3em;
   max-width: 53em; }
-
-.ia-vendor-new, .ia-vendor-edit {
-  padding-bottom: 3em;
-  max-width: 53em; }
-  .ia-vendor-new .remove-contact, .ia-vendor-edit .remove-contact {
+  .ia-sites-new .remove-contact, .ia-sites-edit .remove-contact, .ia-vendor-new .remove-contact, .ia-vendor-edit .remove-contact {
     font-weight: bold;
     font-size: 0.8em;
-    color: red;
+    color: #d9534f;
     position: relative;
     bottom: 2px;
     left: 8px; }
-  .ia-vendor-new .add, .ia-vendor-edit .add {
+  .ia-sites-new .add, .ia-sites-edit .add, .ia-vendor-new .add, .ia-vendor-edit .add {
     margin-top: 1.5em; }
-  .ia-vendor-new .form-contacts label, .ia-vendor-edit .form-contacts label {
+  .ia-sites-new .form-contacts label, .ia-sites-edit .form-contacts label, .ia-vendor-new .form-contacts label, .ia-vendor-edit .form-contacts label {
     height: 1em; }
 
 .header {
@@ -103,9 +99,6 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2em 2em 3em 2em; }
-
-.sites .add {
-  margin: 0 0 1em 0; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -5516,7 +5509,17 @@ a {
   a:hover {
     text-decoration: none; }
 
+.clear {
+  clear: both; }
+
 .top-view {
   height: 100%; }
+
+.row-striped {
+  background-color: transparent;
+  padding: 1em 0 1em 0;
+  margin-bottom: 1em; }
+  .row-striped:nth-child(2n) {
+    background-color: #fafafa; }
 
 /*# sourceMappingURL=main.css.map */

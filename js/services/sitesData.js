@@ -16,7 +16,7 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
         });
         return deferred.promise;
     };
-    sitesData.getSiteById = function(id) {
+    sitesData.find = function(id) {
         var deferred = $q.defer();
         $http({
             method: 'GET',

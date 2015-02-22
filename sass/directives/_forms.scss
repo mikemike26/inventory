@@ -1,10 +1,10 @@
-.ia-vendor-new, .ia-vendor-edit {
-  padding-bottom: 3em;
-  max-width: 53em;
+.ia-sites-new, .ia-sites-edit, .ia-vendor-new, .ia-vendor-edit {
+   padding-bottom: 3em;
+   max-width: 53em;
   .remove-contact {
     font-weight: bold;
     font-size: 0.8em;
-    color: red;
+    color: #d9534f;
     position: relative;
     bottom: 2px;
     left: 8px;
@@ -17,4 +17,4 @@
       height: 1em;
     }
   }
-}
+ }

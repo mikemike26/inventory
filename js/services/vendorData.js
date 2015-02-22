@@ -17,7 +17,7 @@ angular.module('inventoryApp').factory('VendorData', function(DummyDataHelper, $
         });
         return deferred.promise;
     };
-    vendorData.getVendorById = function(id) {
+    vendorData.find = function(id) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
