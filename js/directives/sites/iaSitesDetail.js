@@ -6,8 +6,10 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
        link: function(scope, element, attrs) {
            var siteId = $stateParams.itemId;
            scope.delete = false;
+           scope.hide = true;
            SitesData.find(siteId).then(function(data) {
                scope.site = data;
+               scope.hide = false;
                console.log(data);
            });
            scope.edit = function(event) {

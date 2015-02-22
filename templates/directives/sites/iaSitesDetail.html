@@ -1,69 +1,72 @@
 <div>
-    <div class="row">
-        <h2>{{site.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
-    </div>
-    <div class="row">
-        <h3>Site Details</h3>
-        <div class="col-md-12">
-            <p>{{site.Code}}</p>
+    <div class="loading" data-ng-show="hide"><img src="img/loading.gif" /></div>
+    <div class="loading-content" data-ng-hide="hide">
+        <div class="row">
+            <h2>{{site.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
         </div>
-        <div class="col-md-12">
-            <p>{{site.SiteType}}</p>
-        </div>
-        <div class="col-md-12">
-            <h4>Phone</h4>
-            <p>{{site.PhoneNumber}}</p>
-        </div>
-    </div>
-    <div class="row">
-        <h3>Site Address</h3>
-        <div class="col-md-12">
-            <p>{{site.Address.AddressLine1}}</p>
-        </div>
-        <div class="col-md-12">
-            <p>{{site.Address.AddressLine2}}</p>
-        </div>
-        <div class="col-md-4">
-            <p>{{site.Address.City}} {{site.Address.State}}, {{site.Address.Zip}}</p>
-        </div>
-    </div>
-    <div class="row">
-        <h3>Site Contact</h3>
-        <div class="row-striped" data-ng-repeat="contact in site.SiteContacts">
+        <div class="row">
+            <h3>Site Details</h3>
             <div class="col-md-12">
-                <p>{{contact.FirstName}} {{contact.LastName}}</p>
+                <p>{{site.Code}}</p>
             </div>
             <div class="col-md-12">
-                <p>{{contact.Title}}</p>
+                <p>{{site.SiteType}}</p>
             </div>
             <div class="col-md-12">
-                <p>{{contact.EmailAddress}}</p>
+                <h4>Phone</h4>
+                <p>{{site.PhoneNumber}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Site Address</h3>
+            <div class="col-md-12">
+                <p>{{site.Address.AddressLine1}}</p>
+            </div>
+            <div class="col-md-12">
+                <p>{{site.Address.AddressLine2}}</p>
             </div>
             <div class="col-md-4">
-                <h4>Primary Phone</h4>
-                <p>{{contact.PrimaryPhone}}</p>
+                <p>{{site.Address.City}} {{site.Address.State}}, {{site.Address.Zip}}</p>
             </div>
-            <div class="col-md-4">
-                <h4>Mobile Phone</h4>
-                <p>{{contact.MobilePhone}}</p>
+        </div>
+        <div class="row">
+            <h3>Site Contact</h3>
+            <div class="row-striped" data-ng-repeat="contact in site.SiteContacts">
+                <div class="col-md-12">
+                    <p>{{contact.FirstName}} {{contact.LastName}}</p>
+                </div>
+                <div class="col-md-12">
+                    <p>{{contact.Title}}</p>
+                </div>
+                <div class="col-md-12">
+                    <p>{{contact.EmailAddress}}</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Primary Phone</h4>
+                    <p>{{contact.PrimaryPhone}}</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Mobile Phone</h4>
+                    <p>{{contact.MobilePhone}}</p>
+                </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
         </div>
-    </div>
-    <div class="row">
-        <h3>Site Notes</h3>
-        <div class="col-md-12 notes">
-            <p class="notes">{{site.SiteNotes}}</p>
-        </div>
-        <div ng-hide="delete">
-            <a href="#" class="btn btn-success" ui-sref="dashboard.inventory.sites.index">Done</a>
-            <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">Delete Site</a>
-        </div>
-        <div ng-show="delete">
-            <h4>Are you sure you want to delete this site?</h4>
-            <a href="#" class="btn btn-danger" ng-click="deleteSite($event)">Yes, Delete this Site</a>
-            <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">No, Don't Delete</a>
-        </div>
+        <div class="row">
+            <h3>Site Notes</h3>
+            <div class="col-md-12 notes">
+                <p class="notes">{{site.SiteNotes}}</p>
+            </div>
+            <div ng-hide="delete">
+                <a href="#" class="btn btn-success" ui-sref="dashboard.inventory.sites.index">Done</a>
+                <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">Delete Site</a>
+            </div>
+            <div ng-show="delete">
+                <h4>Are you sure you want to delete this site?</h4>
+                <a href="#" class="btn btn-danger" ng-click="deleteSite($event)">Yes, Delete this Site</a>
+                <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">No, Don't Delete</a>
+            </div>
 
+        </div>
     </div>
 </div>

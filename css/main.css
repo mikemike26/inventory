@@ -5522,4 +5522,11 @@ a {
   .row-striped:nth-child(2n) {
     background-color: #fafafa; }
 
+.loading img {
+  width: 7em;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 5em; }
+
 /*# sourceMappingURL=main.css.map */

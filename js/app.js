@@ -1,4 +1,4 @@
-angular.module('inventoryApp', ['ui.router', 'ui.utils']);
+angular.module('inventoryApp', ['ui.router', 'ui.utils.masks']);
 
 
 

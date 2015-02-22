@@ -4,6 +4,7 @@ angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $stat
        replace: true,
        templateUrl: 'templates/directives/sites/iaSitesNew.html',
        link: function(scope, element, attrs) {
+           scope.y = "(999) 999-9999";
            scope.site = {
                SiteContacts: [
                    {
