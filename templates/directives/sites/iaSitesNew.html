@@ -48,8 +48,11 @@
     <div class="row">
         <h3>Site Contact</h3>
         <div class="form-contacts row-striped" ng-repeat="contact in site.SiteContacts">
+            <div class="col-md-12">
+                <a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove</a>
+            </div>
             <div class="col-md-6">
-                <label for="siteContactFirst"><a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove</a></label>
+                <label for="siteContactFirst"></label>
                 <input type="text" class="form-control" id="siteContactFirst" ng-model="contact.FirstName" placeholder="Enter a first name">
             </div>
             <div class="col-md-6">

@@ -33,7 +33,7 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
     //    var deferred = $q.defer();
     //    $http({
     //        method: 'PUT',
-    //        url: 'https://circi-azizdev.azurewebsites.net/api/sites',
+    //        url: 'https://circi-azizdev.azurewebsites.net/api/sites/'+data.id,
     //        data: angular.toJson(data),
     //        dataType: 'json',
     //        contentType: 'application/json'
