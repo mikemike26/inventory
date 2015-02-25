@@ -4,8 +4,10 @@ angular.module('inventoryApp').factory('FormData', function() {
             sites: [
                 {
                     title: "Site Details",
-                    sectionType: "standard",
-                    buttonText: "",
+                    sectionType:
+                        {
+                            type: "standard"
+                        },
                     inputs: [
                         {
                             label: "Code",
@@ -43,8 +45,10 @@ angular.module('inventoryApp').factory('FormData', function() {
                 },
                 {
                     title: "Site Address",
-                    sectionType: "standard",
-                    buttonText: "",
+                    sectionType:
+                        {
+                            type: "standard"
+                        },
                     inputs: [
                         {
                             label: "Address",
@@ -97,52 +101,74 @@ angular.module('inventoryApp').factory('FormData', function() {
                 },
                 {
                     title: "Site Contact",
-                    sectionType: "multiple",
-                    buttonText: "Add a Contact",
+                    sectionType:
+                        {
+                            type: "multiple",
+                            repeat: ["contact", "site.SiteContacts"],
+                            button: "Add a Contact"
+                        },
                     inputs: [
                         {
                             label: "First",
                             placeHolder: "Enter a first name",
                             type: "text",
-                            model: "site.Address.AddressLine1",
-                            widthClass: "col-md-12",
-                            idName: "siteAddressAddress1"
+                            model: "contact.FirstName",
+                            widthClass: "col-md-6",
+                            idName: "siteContactFirst"
                         },
                         {
                             label: "Last",
-                            placeHolder: "Enter a site address",
+                            placeHolder: "Enter a last name",
                             type: "text",
-                            model: "site.Address.AddressLine2",
+                            model: "contact.LastName",
                             widthClass: "col-md-6",
-                            idName: "siteAddressAddress2"
+                            idName: "siteContactLast"
                         },
                         {
-                            placeHolder: "Enter city",
+                            placeHolder: "Enter a Title",
                             type: "text",
-                            model: "site.Address.City",
+                            model: "contact.Title",
                             widthClass: "col-md-6",
-                            idName: "siteAddressCity"
+                            idName: "siteContactTitle"
                         },
                         {
-                            placeHolder: "Enter a state",
+                            placeHolder: "Enter an email",
                             type: "text",
-                            model: "site.Address.State",
-                            widthClass: "col-md-4",
-                            idName: "siteAddressState"
+                            model: "contact.EmailAddress",
+                            widthClass: "col-md-6",
+                            idName: "siteContactEmail"
                         },
                         {
-                            placeHolder: "Enter a zip",
+                            placeHolder: "Enter a primary phone",
                             type: "phone",
-                            model: "site.Address.Zip",
-                            widthClass: "col-md-4",
-                            idName: "siteAddressZip"
+                            model: "contact.PrimaryPhone",
+                            widthClass: "col-md-6",
+                            idName: "siteContactPrimary"
                         },
                         {
-                            placeHolder: "Enter a country",
-                            type: "text",
-                            model: "site.Address.Country",
-                            widthClass: "col-md-4",
-                            idName: "siteAddressCountry"
+                            placeHolder: "Enter a mobile phone",
+                            type: "phone",
+                            model: "contact.MobilePhone",
+                            widthClass: "col-md-6",
+                            idName: "siteContactMobile"
+                        }
+                    ]
+                },
+                {
+                    title: "Site Notes",
+                    sectionType:
+                    {
+                        type: "standard"
+                    },
+                    inputs: [
+                        {
+                            label: "",
+                            placeHolder: "",
+                            type: "textArea",
+                            model: "site.SiteNotes",
+                            widthClass: "col-md-12",
+                            idName: "siteNotes",
+                            rows: 4
                         }
                     ]
                 }
