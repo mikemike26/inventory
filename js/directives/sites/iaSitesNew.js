@@ -1,9 +1,11 @@
-angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $state) {
+angular.module('inventoryApp').directive('iaSitesNew', function(SitesData, $state, FormData) {
    return {
        restrict: 'C',
        replace: true,
        templateUrl: 'templates/directives/sites/iaSitesNew.html',
        link: function(scope, element, attrs) {
+           scope.forms = FormData.getFormByType("sites");
+           console.log(scope.forms);
            scope.y = "(999) 999-9999";
            scope.site = {
                SiteContacts: [
