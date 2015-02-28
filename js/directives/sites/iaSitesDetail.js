@@ -10,7 +10,6 @@ angular.module('inventoryApp').directive('iaSitesDetail', function(SitesData, $s
            SitesData.find(siteId).then(function(data) {
                scope.site = data;
                scope.hide = false;
-               console.log(data);
            });
            scope.edit = function(event) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;

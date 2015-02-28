@@ -13,13 +13,26 @@
   }
   p {
     width: 100%;
-    font-size: 14px;
     line-height: 1.42857;
     color: #555555;
     background-image: none;
+    &.form-control {
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   .notes {
     min-height: 5em;
     margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    font-size: 0.8em;
+    padding: 0.3em 0.4em;
   }
 }

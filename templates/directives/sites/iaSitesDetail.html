@@ -6,55 +6,83 @@
         </div>
         <div class="row">
             <h3>Site Details</h3>
-            <div class="col-md-12">
-                <p>{{site.Code}}</p>
+            <div class="col-md-6">
+                <label>Code</label>
+                <p class="form-control">{{site.Code}}</p>
             </div>
-            <div class="col-md-12">
-                <p>{{site.SiteType}}</p>
+            <div class="col-md-6">
+                <label>Name</label>
+                <p class="form-control">{{site.Name}}</p>
             </div>
-            <div class="col-md-12">
-                <h4>Phone</h4>
-                <p>{{site.PhoneNumber}}</p>
+            <div class="col-md-6">
+                <label>Type</label>
+                <p class="form-control">{{site.SiteType}}</p>
+            </div>
+            <div class="col-md-6">
+                <label>Phone</label>
+                <p class="form-control">{{site.PhoneNumber}}</p>
             </div>
         </div>
         <div class="row">
             <h3>Site Address</h3>
-            <div class="col-md-12">
-                <p>{{site.Address.AddressLine1}}</p>
+            <div class="col-md-6">
+                <label>Address</label>
+                <p class="form-control">{{site.Address.AddressLine1}}</p>
             </div>
-            <div class="col-md-12">
-                <p>{{site.Address.AddressLine2}}</p>
+            <div class="col-md-6">
+                <label>Suite#/Additional</label>
+                <p class="form-control">{{site.Address.AddressLine2}}</p>
             </div>
-            <div class="col-md-4">
-                <p>{{site.Address.City}} {{site.Address.State}}, {{site.Address.Zip}}</p>
+            <div class="col-md-3">
+                <label>City</label>
+                <p class="form-control">{{site.Address.City}}</p>
+            </div>
+            <div class="col-md-3">
+                <label>State</label>
+                <p class="form-control">{{site.Address.State}}</p>
+            </div>
+            <div class="col-md-3">
+                <label>Zip</label>
+                <p class="form-control">{{site.Address.Zip}}</p>
+            </div>
+            <div class="col-md-3">
+                <label>Country</label>
+                <p class="form-control">{{site.Address.Country}}</p>
             </div>
         </div>
         <div class="row">
             <h3>Site Contact</h3>
-            <div class="row-striped" data-ng-repeat="contact in site.SiteContacts">
-                <div class="col-md-12">
-                    <p>{{contact.FirstName}} {{contact.LastName}}</p>
+            <div class="form-contacts row-striped" ng-repeat="contact in site.SiteContacts">
+                <div class="col-md-6">
+                    <label>First Name</label>
+                    <p class="form-control">{{contact.FirstName}}</p>
                 </div>
-                <div class="col-md-12">
-                    <p>{{contact.Title}}</p>
+                <div class="col-md-6">
+                    <label>Last Name</label>
+                    <p class="form-control">{{contact.LastName}}</p>
                 </div>
-                <div class="col-md-12">
-                    <p>{{contact.EmailAddress}}</p>
+                <div class="col-md-6">
+                    <label>Title</label>
+                    <p class="form-control">{{contact.Title}}</p>
                 </div>
-                <div class="col-md-4">
-                    <h4>Primary Phone</h4>
-                    <p>{{contact.PrimaryPhone}}</p>
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <p class="form-control">{{contact.EmailAddress}}</p>
                 </div>
-                <div class="col-md-4">
-                    <h4>Mobile Phone</h4>
-                    <p>{{contact.MobilePhone}}</p>
+                <div class="col-md-6">
+                    <label>Primary Phone</label>
+                    <p class="form-control">{{contact.PrimaryPhone}}</p>
+                </div>
+                <div class="col-md-6">
+                    <label>Mobile Phone</label>
+                    <p class="form-control">{{contact.MobilePhone}}</p>
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
         <div class="row">
             <h3>Site Notes</h3>
-            <div class="col-md-12 notes">
+            <div class="col-md-12">
                 <p class="notes">{{site.SiteNotes}}</p>
             </div>
             <div ng-hide="delete">
@@ -66,7 +94,6 @@
                 <a href="#" class="btn btn-danger" ng-click="deleteSite($event)">Yes, Delete this Site</a>
                 <a href="#" class="btn btn-danger" ng-click="deleteSitePrompt($event)">No, Don't Delete</a>
             </div>
-
         </div>
     </div>
 </div>

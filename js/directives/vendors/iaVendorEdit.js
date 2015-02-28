@@ -5,7 +5,7 @@ angular.module('inventoryApp').directive('iaVendorEdit', function(VendorData, $s
        templateUrl: 'templates/directives/vendors/iaVendorEdit.html',
        link: function(scope, element, attrs) {
            var vendorId = $stateParams.itemId;
-           VendorData.getVendorById(vendorId).then(function(data) {
+           VendorData.find(vendorId).then(function(data) {
                scope.vendor = angular.fromJson(data);
            });
            scope.updateVendor = function(event) {
@@ -25,6 +25,21 @@ angular.module('inventoryApp').directive('iaVendorEdit', function(VendorData, $s
            scope.removeContact = function(event, index) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                scope.vendor.VendorContacts.splice(index, 1);
+           };
+           scope.addAccount = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorAccounts.push({
+                   AccountNumber: "",
+                   AccountBillingPhone: "",
+                   AccountBillingName: "",
+                   AccountBillingCode: "",
+                   AccountDescription: "",
+                   AccountNotes: ""
+               });
+           };
+           scope.removeAccount = function(event, index) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorAccounts.splice(index, 1);
            };
        }
    }

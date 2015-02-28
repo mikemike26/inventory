@@ -11,6 +11,16 @@ angular.module('inventoryApp').directive('iaVendorNew', function(VendorData, $st
                        LastName: "",
                        Title: ""
                    }
+               ],
+               VendorAccounts : [
+                   {
+                       AccountNumber: "",
+                       AccountBillingPhone: "",
+                       AccountBillingName: "",
+                       AccountBillingCode: "",
+                       AccountDescription: "",
+                       AccountNotes: ""
+                   }
                ]
            };
            scope.addVendor = function(event) {
@@ -31,6 +41,21 @@ angular.module('inventoryApp').directive('iaVendorNew', function(VendorData, $st
            scope.removeContact = function(event, index) {
                event.preventDefault ? event.preventDefault() : event.returnValue = false;
                scope.vendor.VendorContacts.splice(index, 1);
+           };
+           scope.addAccount = function(event) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorAccounts.push({
+                   AccountNumber: "",
+                   AccountBillingPhone: "",
+                   AccountBillingName: "",
+                   AccountBillingCode: "",
+                   AccountDescription: "",
+                   AccountNotes: ""
+               });
+           };
+           scope.removeAccount = function(event, index) {
+               event.preventDefault ? event.preventDefault() : event.returnValue = false;
+               scope.vendor.VendorAccounts.splice(index, 1);
            };
        }
    }

@@ -51,13 +51,13 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
                 url : '',
                 templateUrl : 'templates/pages/vendors/index.html'
             })
-            .state("dashboard.inventory.vendor.new", {
-                url : '/add',
-                templateUrl : 'templates/pages/vendors/new.html'
-            })
             .state("dashboard.inventory.vendor.edit", {
                 url : '/:itemId/edit',
                 templateUrl : 'templates/pages/vendors/edit.html'
+            })
+            .state("dashboard.inventory.vendor.new", {
+                url : '/new',
+                templateUrl : 'templates/pages/vendors/new.html'
             })
             .state("dashboard.inventory.vendor.show", {
                 url : '/:itemId',

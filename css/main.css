@@ -14,27 +14,39 @@
     font-size: 1em; }
   .list-details p {
     width: 100%;
-    font-size: 14px;
     line-height: 1.42857;
     color: #555555;
     background-image: none; }
+    .list-details p.form-control {
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0; }
   .list-details .notes {
     min-height: 5em;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    font-size: 0.8em;
+    padding: 0.3em 0.4em; }
 
-.ia-sites-new, .ia-sites-edit, .ia-vendor-new, .ia-vendor-edit {
+.new {
   padding-bottom: 3em;
   max-width: 53em; }
-  .ia-sites-new .remove-contact, .ia-sites-edit .remove-contact, .ia-vendor-new .remove-contact, .ia-vendor-edit .remove-contact {
+  .new .remove-contact {
     font-weight: bold;
     font-size: 0.8em;
     color: #d9534f;
     position: relative;
     bottom: 2px;
     left: 8px; }
-  .ia-sites-new .add, .ia-sites-edit .add, .ia-vendor-new .add, .ia-vendor-edit .add {
+  .new .add {
     margin-top: 1.5em; }
-  .ia-sites-new .form-contacts label, .ia-sites-edit .form-contacts label, .ia-vendor-new .form-contacts label, .ia-vendor-edit .form-contacts label {
+  .new .form-contacts label {
     height: 1em; }
 
 .header {
@@ -5490,7 +5502,7 @@ h2 {
 
 h3 {
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 0.5em; }
 
 ul, li {
@@ -5528,5 +5540,14 @@ a {
   position: relative;
   margin: 0 auto;
   top: 5em; }
+
+label {
+  color: #666666;
+  font-size: 0.7em; }
+
+.form-control {
+  font-size: 0.8em;
+  height: 2.4em;
+  padding: 0.3em 0.4em; }
 
 /*# sourceMappingURL=main.css.map */

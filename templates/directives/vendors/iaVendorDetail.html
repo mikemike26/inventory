@@ -3,35 +3,130 @@
         <h2>{{vendor.Name}} <a href="#" class="btn btn-success" ng-click="edit($event)">Edit</a></h2>
     </div>
     <div class="row">
-        <h3>Vendor Address</h3>
-        <div class="col-md-12">
-            <p>{{vendor.Address.AddressLine1}}</p>
-            <p ng-show="vendor.Address.AddressLine2">{{vendor.Address.AddressLine2}}</p>
-            <p>{{vendor.Address.City}} {{vendor.Address.State}}, {{vendor.Address.Zip}}</p>
+        <h3>Vendor Contacts</h3>
+        <div class="form-contacts row-striped" ng-repeat="contact in vendor.VendorContacts">
+            <div class="col-md-4">
+                <label>Title</label>
+                <p class="form-control">{{contact.Title}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>First Name</label>
+                <p class="form-control">{{contact.FirstName}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Last Name</label>
+                <p class="form-control">{{contact.LastName}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Primary Phone</label>
+                <p class="form-control">{{contact.PrimaryPhone}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Mobile Phone</label>
+                <p class="form-control">{{contact.MobilePhone}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <p class="form-control">{{contact.EmailAddress}}</p>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
     <div class="row">
-        <h3>Vendor Contacts</h3>
-        <div class="col-md-8">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="list-item" ng-click="goToItem(vendor)" ng-repeat="contact in vendor.VendorContacts">
-                    <td>{{contact.Title}}</td>
-                    <td>{{contact.FirstName}} {{contact.LastName}}</td>
-                </tr>
-                </tbody>
-            </table>
+        <h3>Vendor Accounts</h3>
+        <div class="form-contacts row-striped" data-ng-repeat="account in vendor.VendorAccounts">
+            <div class="col-md-4">
+                <label>Account Number</label>
+                <p class="form-control">{{account.AccountNumber}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Billing Phone Number</label>
+                <p class="form-control">{{account.AccountBillingPhone}}</p>
+            </div>
+            <div class="col-md-4">
+                <label>Billing Name</label>
+                <p class="form-control">{{account.AccountBillingName}}</p>
+            </div>
+            <div class="col-md-6">
+                <label>Billing GL Code</label>
+                <p class="form-control">{{account.AccountBillingCode}}</p>
+            </div>
+            <div class="col-md-6">
+                <label>Account Description</label>
+                <p class="form-control">{{account.AccountDescription}}</p>
+            </div>
+            <div class="col-md-12">
+                <label>Notes</label>
+                <p class="notes">{{account.AccountNotes}}</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Bill to the Following</h3>
+        <div class="col-md-12">
+            <label>Name</label>
+            <p class="form-control">{{vendor.BillTo.Name}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>Address</label>
+            <p class="form-control">{{vendor.BillTo.AddressLine1}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>Suite#/Additional</label>
+            <p class="form-control">{{vendor.BillTo.AddressLine2}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>City</label>
+            <p class="form-control">{{vendor.BillTo.City}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>State</label>
+            <p class="form-control">{{vendor.BillTo.State}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>Zip</label>
+            <p class="form-control">{{vendor.BillTo.Zip}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>Country</label>
+            <p class="form-control">{{vendor.BillTo.Country}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Pay to the Following</h3>
+        <div class="col-md-12">
+            <label>Name</label>
+            <p class="form-control">{{vendor.PayTo.Name}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>Address</label>
+            <p class="form-control">{{vendor.PayTo.AddressLine1}}</p>
+        </div>
+        <div class="col-md-6">
+            <label>Suite#/Additional</label>
+            <p class="form-control">{{vendor.PayTo.AddressLine2}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>City</label>
+            <p class="form-control">{{vendor.PayTo.City}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>State</label>
+            <p class="form-control">{{vendor.PayTo.State}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>Zip</label>
+            <p class="form-control">{{vendor.PayTo.Zip}}</p>
+        </div>
+        <div class="col-md-3">
+            <label>Country</label>
+            <p class="form-control">{{vendor.PayTo.Country}}</p>
         </div>
     </div>
     <div class="row">
         <h3>Vendor Notes</h3>
-        <div class="col-md-12 notes">
+        <div class="col-md-12">
             <p class="notes">{{vendor.VendorNotes}}</p>
         </div>
         <div ng-hide="delete">

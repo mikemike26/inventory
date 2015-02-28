@@ -2,74 +2,77 @@
     <div class="row">
         <h3>Site Details</h3>
         <div class="col-md-6">
-            <label for="siteCode"></label>
+            <label for="siteCode">Code</label>
             <input type="text" class="form-control" id="siteCode" ng-model="site.Code" placeholder="Enter site code">
         </div>
         <div class="col-md-6">
-            <label for="siteName"></label>
+            <label for="siteName">Name</label>
             <input type="text" class="form-control" id="siteName" ng-model="site.Name" placeholder="Enter site name">
         </div>
         <div class="col-md-6">
-            <label for="siteType"></label>
+            <label for="siteType">Type</label>
             <input type="text" class="form-control" id="siteType" ng-model="site.SiteType" placeholder="Enter site type">
         </div>
         <div class="col-md-6">
-            <label for="sitePhone"></label>
-            <input type="text" class="form-control" data-ui-br-phone-number="" id="sitePhone" ng-model="site.PhoneNumber" placeholder="Enter site phone number">
+            <label for="sitePhone">Phone</label>
+            <input type="text" class="form-control" id="sitePhone" ng-model="site.PhoneNumber" placeholder="Enter site phone number">
         </div>
     </div>
     <div class="row">
         <h3>Site Address</h3>
-        <div class="col-md-12">
-            <label for="siteAddressAddress1"></label>
+        <div class="col-md-6">
+            <label for="siteAddressAddress1">Address</label>
             <input type="text" class="form-control" id="siteAddressAddress1" ng-model="site.Address.AddressLine1" placeholder="Enter a site address">
         </div>
         <div class="col-md-6">
-            <label for="siteAddressAddress2"></label>
+            <label for="siteAddressAddress2">Suite#/Additional</label>
             <input type="text" class="form-control" id="siteAddressAddress2" ng-model="site.Address.AddressLine2" placeholder="suite#/additional">
         </div>
-        <div class="col-md-6">
-            <label for="siteAddressCity"></label>
+        <div class="col-md-3">
+            <label for="siteAddressCity">City</label>
             <input type="text" class="form-control" id="siteAddressCity" ng-model="site.Address.City" placeholder="Enter city">
         </div>
-        <div class="col-md-4">
-            <label for="siteAddressState"></label>
+        <div class="col-md-3">
+            <label for="siteAddressState">State</label>
             <input type="text" class="form-control" id="siteAddressState" ng-model="site.Address.State" placeholder="Enter a state">
         </div>
-        <div class="col-md-4">
-            <label for="siteAddressZip"></label>
+        <div class="col-md-3">
+            <label for="siteAddressZip">Zip</label>
             <input type="text" class="form-control input-number" id="siteAddressZip" ng-model="site.Address.Zip" placeholder="Enter a zip">
         </div>
-        <div class="col-md-4">
-            <label for="siteAddressCountry"></label>
+        <div class="col-md-3">
+            <label for="siteAddressCountry">Country</label>
             <input type="text" class="form-control" id="siteAddressCountry" ng-model="site.Address.Country" placeholder="Enter a country">
         </div>
     </div>
     <div class="row">
         <h3>Site Contact</h3>
         <div class="form-contacts row-striped" ng-repeat="contact in site.SiteContacts">
+            <div class="col-md-12">
+                <a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove contact</a>
+            </div>
             <div class="col-md-6">
-                <label for="siteContactFirst"><a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove</a></label>
+                <label for="siteContactFirst">First Name</label>
                 <input type="text" class="form-control" id="siteContactFirst" ng-model="contact.FirstName" placeholder="Enter a first name">
             </div>
             <div class="col-md-6">
-                <label for="siteContactLast"></label>
+                <label for="siteContactLast">Last Name</label>
                 <input type="text" class="form-control" id="siteContactLast" ng-model="contact.LastName" placeholder="Enter a last name">
             </div>
             <div class="col-md-6">
-                <label for="siteContactTitle"></label>
+                <label for="siteContactTitle">Title</label>
                 <input type="text" class="form-control" id="siteContactTitle" ng-model="contact.Title" placeholder="Title">
             </div>
             <div class="col-md-6">
-                <label for="siteContactEmail"></label>
+                <label for="siteContactEmail">Email</label>
                 <input type="text" class="form-control" id="siteContactEmail" ng-model="contact.EmailAddress" placeholder="Enter an email">
             </div>
             <div class="col-md-6">
-                <label for="siteContactPrimary"></label>
+                <label for="siteContactPrimary">Primary Phone</label>
                 <input type="text" class="form-control" data-ui-br-phone-number="" id="siteContactPrimary" ng-model="contact.PrimaryPhone" placeholder="Enter a primary phone number">
             </div>
             <div class="col-md-6">
-                <label for="siteContactMobile"></label>
+                <label for="siteContactMobile">Mobile Phone</label>
                 <input type="text" class="form-control" data-ui-br-phone-number="" id="siteContactMobile" ng-model="contact.MobilePhone" placeholder="Enter a mobile phone number">
             </div>
             <div class="clear"></div>
@@ -82,5 +85,5 @@
             <textarea class="form-control" rows="4" ng-model="site.SiteNotes" ></textarea>
         </div>
     </div>
-    <a href="#" class="btn btn-success" ng-click="addSite($event)">Add</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.sites.index">Cancel</a>
+    <a href="#" class="btn btn-success" ng-click="addSite($event)">Add Site</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.sites.index">Cancel</a>
 </div>
