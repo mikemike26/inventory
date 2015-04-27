@@ -73,13 +73,13 @@ angular.module('inventoryApp').config([ '$urlRouterProvider', '$stateProvider',
                 url : '',
                 templateUrl : 'templates/pages/circuits/index.html'
             })
-            .state("dashboard.inventory.circuits.new", {
-                url : '/add',
-                templateUrl : 'templates/pages/circuits/new.html'
-            })
             .state("dashboard.inventory.circuits.edit", {
                 url : '/:itemId/edit',
                 templateUrl : 'templates/pages/circuits/edit.html'
+            })
+            .state("dashboard.inventory.circuits.new", {
+                url : '/new',
+                templateUrl : 'templates/pages/circuits/new.html'
             })
             .state("dashboard.inventory.circuits.show", {
                 url : '/:itemId',

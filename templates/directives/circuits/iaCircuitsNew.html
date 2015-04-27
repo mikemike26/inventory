@@ -2,73 +2,88 @@
     <div class="row">
         <h3>Circuit Details</h3>
         <div class="col-md-6">
-            <label for="circuitCode"></label>
-            <input type="text" class="form-control" id="circuitCode" ng-model="circuit.Code" placeholder="Enter circuit code">
+            <label for="circuitId">Circuit ID</label>
+            <input type="text" class="form-control" id="circuitId" ng-model="circuit.Id" placeholder="Enter circuit id">
         </div>
         <div class="col-md-6">
-            <label for="circuitName"></label>
-            <input type="text" class="form-control" id="circuitName" ng-model="circuit.Name" placeholder="Enter circuit name">
+            <label for="siteName">Name</label>
+            <input type="text" class="form-control" id="siteName" ng-model="site.Name" placeholder="Enter site name">
         </div>
         <div class="col-md-6">
-            <label for="circuitType"></label>
-            <input type="text" class="form-control" id="circuitType" ng-model="circuit.CircuitType" placeholder="Enter circuit type">
+            <label for="siteType">Type</label>
+            <input type="text" class="form-control" id="siteType" ng-model="site.SiteType" placeholder="Enter site type">
         </div>
         <div class="col-md-6">
-            <label for="circuitPhone"></label>
-            <input type="text" class="form-control" id="circuitPhone" ng-model="circuit.PhoneNumber" placeholder="Enter circuit phone number">
+            <label for="sitePhone">Phone</label>
+            <input type="text" class="form-control" id="sitePhone" ng-model="site.PhoneNumber" placeholder="Enter site phone number">
         </div>
     </div>
     <div class="row">
-        <h3>Circuit Address</h3>
-        <div class="col-md-12">
-            <label for="circuitAddressAddress1"></label>
-            <input type="text" class="form-control" id="circuitAddressAddress1" ng-model="circuit.Address.AddressLine1" placeholder="Enter a circuit address">
+        <h3>Site Address</h3>
+        <div class="col-md-6">
+            <label for="siteAddressAddress1">Address</label>
+            <input type="text" class="form-control" id="siteAddressAddress1" ng-model="site.Address.AddressLine1" placeholder="Enter a site address">
         </div>
-        <div class="col-md-12">
-            <label for="circuitAddressAddress2"></label>
-            <input type="text" class="form-control" id="circuitAddressAddress2" ng-model="circuit.Address.AddressLine2" placeholder="">
+        <div class="col-md-6">
+            <label for="siteAddressAddress2">Suite#/Additional</label>
+            <input type="text" class="form-control" id="siteAddressAddress2" ng-model="site.Address.AddressLine2" placeholder="suite#/additional">
         </div>
-        <div class="col-md-4">
-            <label for="circuitAddressCity"></label>
-            <input type="text" class="form-control" id="circuitAddressCity" ng-model="circuit.Address.City" placeholder="Enter city">
+        <div class="col-md-3">
+            <label for="siteAddressCity">City</label>
+            <input type="text" class="form-control" id="siteAddressCity" ng-model="site.Address.City" placeholder="Enter city">
         </div>
-        <div class="col-md-4">
-            <label for="circuitAddressState"></label>
-            <input type="text" class="form-control" id="circuitAddressState" ng-model="circuit.Address.State" placeholder="Enter a state">
+        <div class="col-md-3">
+            <label for="siteAddressState">State</label>
+            <input type="text" class="form-control" id="siteAddressState" ng-model="site.Address.State" placeholder="Enter a state">
         </div>
-        <div class="col-md-4">
-            <label for="circuitAddressZip"></label>
-            <input type="text" class="form-control" id="circuitAddressZip" ng-model="circuit.Address.Zip" placeholder="Enter a zip">
+        <div class="col-md-3">
+            <label for="siteAddressZip">Zip</label>
+            <input type="text" class="form-control input-number" id="siteAddressZip" ng-model="site.Address.Zip" placeholder="Enter a zip">
+        </div>
+        <div class="col-md-3">
+            <label for="siteAddressCountry">Country</label>
+            <input type="text" class="form-control" id="siteAddressCountry" ng-model="site.Address.Country" placeholder="Enter a country">
         </div>
     </div>
     <div class="row">
-        <h3>Circuit Contact</h3>
-        <div class="col-md-6">
-            <label for="circuitContactFirst"></label>
-            <input type="text" class="form-control" id="circuitContactFirst" ng-model="circuit.CircuitContact.FirstName" placeholder="Enter a first name">
+        <h3>Site Contact</h3>
+        <div class="form-contacts row-striped" ng-repeat="contact in site.SiteContacts">
+            <div class="col-md-12">
+                <a href="#" class="remove-contact" ng-click="removeContact($event, $index)">remove contact</a>
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactFirst">First Name</label>
+                <input type="text" class="form-control" id="siteContactFirst" ng-model="contact.FirstName" placeholder="Enter a first name">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactLast">Last Name</label>
+                <input type="text" class="form-control" id="siteContactLast" ng-model="contact.LastName" placeholder="Enter a last name">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactTitle">Title</label>
+                <input type="text" class="form-control" id="siteContactTitle" ng-model="contact.Title" placeholder="Title">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactEmail">Email</label>
+                <input type="text" class="form-control" id="siteContactEmail" ng-model="contact.EmailAddress" placeholder="Enter an email">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactPrimary">Primary Phone</label>
+                <input type="text" class="form-control" data-ui-br-phone-number="" id="siteContactPrimary" ng-model="contact.PrimaryPhone" placeholder="Enter a primary phone number">
+            </div>
+            <div class="col-md-6">
+                <label for="siteContactMobile">Mobile Phone</label>
+                <input type="text" class="form-control" data-ui-br-phone-number="" id="siteContactMobile" ng-model="contact.MobilePhone" placeholder="Enter a mobile phone number">
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="col-md-6">
-            <label for="circuitContactLast"></label>
-            <input type="text" class="form-control" id="circuitContactLast" ng-model="circuit.CircuitContact.LastName" placeholder="Enter a last name">
-        </div>
-        <div class="col-md-12">
-            <label for="circuitContactEmail"></label>
-            <input type="text" class="form-control" id="circuitContactEmail" ng-model="circuit.CircuitContact.EmailAddress" placeholder="Enter an email">
-        </div>
-        <div class="col-md-6">
-            <label for="circuitContactPrimary"></label>
-            <input type="text" class="form-control" id="circuitContactPrimary" ng-model="circuit.CircuitContact.PrimaryPhone" placeholder="Enter a primary phone number">
-        </div>
-        <div class="col-md-6">
-            <label for="circuitContactMobile"></label>
-            <input type="text" class="form-control" id="circuitContactMobile" ng-model="circuit.CircuitContact.MobilePhone" placeholder="Enter a mobile phone number">
-        </div>
+        <a href="#" class="btn btn-success add" ng-click="addContact($event)">Add a Contact</a>
     </div>
     <div class="row">
-        <h3>Circuit Notes</h3>
+        <h3>Site Notes</h3>
         <div class="form-group">
-            <textarea class="form-control" rows="4" ng-model="circuit.CircuitNotes" ></textarea>
+            <textarea class="form-control" rows="4" ng-model="site.SiteNotes" ></textarea>
         </div>
     </div>
-    <a href="#" class="btn btn-success" ng-click="addCircuit($event)">Add</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.circuits.index">Cancel</a>
+    <a href="#" class="btn btn-success" ng-click="addSite($event)">Add Site</a> <a href="#" class="btn btn-danger" ui-sref="dashboard.inventory.sites.index">Cancel</a>
 </div>

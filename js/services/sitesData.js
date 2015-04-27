@@ -4,7 +4,8 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
     var sitesData = new DummyDataHelper("SitesData");
     //var sitesData = {};
     //sitesData.getAll = function() {
-    //    var deferred = $q.defer();
+    //
+    //};var deferred = $q.defer();
     //    $http({
     //        method: 'GET',
     //        url: 'https://circi-azizdev.azurewebsites.net/api/sites'
@@ -15,7 +16,6 @@ angular.module('inventoryApp').factory('SitesData', function(DummyDataHelper, $q
     //        deferred.reject(status);
     //    });
     //    return deferred.promise;
-    //};
     //sitesData.find = function(id) {
     //    var deferred = $q.defer();
     //    $http({
